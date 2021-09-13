@@ -29,8 +29,8 @@ message_template = read_template('message.txt')
 for name, email in zip(names, emails):
     msg = MIMEMultipart()
     message = message_template.substitute(PERSON_NAME=name.title())
-    msg['From']="francosbenitez@gmail.com"
-    msg['To']="francosbenitez@gmail.com"
+    msg['From']=MY_ADRESS
+    msg['To']=MY_ADRESS
     msg['Subject']="This is TEST"
     msg.attach(MIMEText(message, 'plain'))
     s.send_message(msg)
